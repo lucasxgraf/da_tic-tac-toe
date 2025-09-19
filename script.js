@@ -46,6 +46,22 @@ function render() {
   document.getElementById('content').innerHTML = htmlTable;
 }
 
+function restartGame() {
+  fields = [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ];
+
+  render();
+}
+
 function handleClick(index) {
   fields[index] = currentPlayer;
 

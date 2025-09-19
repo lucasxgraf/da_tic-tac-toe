@@ -9,9 +9,17 @@ body {
 
 /* Überschrift */
 h1 {
-  margin-bottom: 300px;
+  margin: 32px 0;
   text-align: center;
   font-size: 80px;
+}
+
+.game_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px); /* Höhe Bildschirm minus Platz für Überschrift */
 }
 
 /* Content */
@@ -59,4 +67,43 @@ table tr:last-child td {
 }
 table tr td:last-child {
   border-right: 0;
+}
+
+/* Center Container */
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mt-56{
+  margin-top: 56px;
+}
+
+/* Modern Button Styling */
+button {
+  background: linear-gradient(135deg, #00B0EF, #0088CC);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 176, 239, 0.3);
+  font-family: inherit;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #0088CC, #006699);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 176, 239, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(0, 176, 239, 0.3);
 }
