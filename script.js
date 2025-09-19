@@ -11,6 +11,8 @@ let fields = [
 ];
 
 let currentPlayer = "X";
+let scoreX = 0;
+let scoreO = 0;
 
 const winningCombinations = [
   [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -20,6 +22,8 @@ const winningCombinations = [
 
 function init() {
   render();
+  updateScoreboard();
+  updateCurrentPlayer();
 }
 
 function render() {
@@ -45,6 +49,24 @@ function render() {
   document.getElementById('content').innerHTML = htmlTable;
 }
 
+function updateScoreboard() {
+  document.getElementById('score-x').textContent = scoreX;
+  document.getElementById('score-o').textContent = scoreO;
+}
+
+function updateCurrentPlayer() {
+  const playerX = document.getElementById('player-x');
+  const playerO = document.getElementById('player-o');
+  
+  if (currentPlayer === 'X') {
+    playerX.classList.add('active');
+    playerO.classList.remove('active');
+  } else {
+    playerX.classList.remove('active');
+    playerO.classList.add('active');
+  }
+}
+
 function restartGame() {
   fields = [
     "",
@@ -59,6 +81,8 @@ function restartGame() {
   ];
 
   render();
+  // currentPlayer = "X";
+  updateCurrentPlayer();
 }
 
 function handleClick(index) {
@@ -80,12 +104,24 @@ function handleClick(index) {
   } else {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
   }
+
+  updateCurrentPlayer();
 }
 
 function checkGameOver() {
   for (let combo of winningCombinations) {
     const [a, b, c] = combo;
     if (fields[a] && fields[a] === fields[b] && fields[a] === fields[c]) {
+      drawWinningLine(combo);
+      disableAllClicks();
+
+      if (fields[a] === 'X') {
+        scoreX++;
+      } else {
+        scoreO++;
+      }
+      updateScoreboard();
+
       return combo;
     }
   }

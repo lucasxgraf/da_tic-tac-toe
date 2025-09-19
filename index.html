@@ -11,6 +11,35 @@
   <h1>Tic Tac Toe</h1>
 
   <div class="game_wrapper">
+    <div class="scoreboard">
+      <div class="player" id="player-x">
+        <div class="player-symbol">
+          <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <line x1="20" y1="20" x2="80" y2="80" stroke="#FFC000" stroke-width="8" stroke-linecap="round" />
+            <line x1="80" y1="20" x2="20" y2="80" stroke="#FFC000" stroke-width="8" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="player-info">
+          <div class="player-name">Spieler X</div>
+          <div class="player-score" id="score-x">0</div>
+        </div>
+      </div>
+      
+      <span class="vs">VS</span>
+      
+      <div class="player" id="player-o">
+        <div class="player-symbol">
+          <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="40" stroke="#00B0EF" stroke-width="8" fill="none" />
+          </svg>
+        </div>
+        <div class="player-info">
+          <div class="player-name">Spieler O</div>
+          <div class="player-score" id="score-o">0</div>
+        </div>
+      </div>
+    </div>
+
     <div id="content"></div>
 
     <div class="center mt-56">
