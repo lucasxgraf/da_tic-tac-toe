@@ -1,0 +1,171 @@
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 60px;
+    margin: 24px 0;
+  }
+  
+  .scoreboard {
+    gap: 30px;
+    padding: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .player-symbol {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .player-symbol svg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .player-score {
+    font-size: 28px;
+  }
+  
+  td {
+    width: 110px;
+    height: 110px;
+  }
+  
+  .mt-56 {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0 10px;
+  }
+  
+  h1 {
+    font-size: 48px;
+    margin: 20px 0;
+  }
+  
+  .game_wrapper {
+    min-height: calc(100vh - 120px);
+    padding: 10px 0;
+  }
+  
+  .scoreboard {
+    gap: 20px;
+    padding: 12px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+  }
+  
+  .player {
+    gap: 8px;
+    padding: 12px;
+  }
+  
+  .player-symbol {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .player-symbol svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .player-name {
+    font-size: 16px;
+  }
+  
+  .player-score {
+    font-size: 24px;
+  }
+  
+  .vs {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+  
+  td {
+    width: 90px;
+    height: 90px;
+  }
+  
+  table td {
+    border: 6px solid white;
+  }
+  
+  button {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  
+  .mt-56 {
+    margin-top: 30px;
+  }
+}
+
+/* Sehr kleine Mobile Geräte (320px - 375px) */
+@media screen and (max-width: 375px) {
+  h1 {
+    font-size: 40px;
+    margin: 16px 0;
+  }
+  
+  .scoreboard {
+    gap: 15px;
+    padding: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    max-width: 300px;
+  }
+  
+  .player {
+    gap: 6px;
+    padding: 8px;
+    min-width: 80px;
+  }
+  
+  .player-symbol {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .player-symbol svg {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .player-name {
+    font-size: 14px;
+  }
+  
+  .player-score {
+    font-size: 20px;
+  }
+  
+  .vs {
+    font-size: 18px;
+    order: 3;
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+  
+  td {
+    width: 75px;
+    height: 75px;
+  }
+  
+  table td {
+    border: 4px solid white;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+  }
+  
+  .mt-56 {
+    margin-top: 25px;
+  }
+}
