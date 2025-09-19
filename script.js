@@ -1,7 +1,7 @@
 let fields = [
   "",
-  "X",
-  "O",
+  "",
+  "",
   "",
   "",
   "",
@@ -10,14 +10,14 @@ let fields = [
   "",
 ];
 
+let currentPlayer = "X"; // Startet mit X
+
 function init() {
   render();
 }
 
-// Funktion zum Rendern der Tabelle
 function render() {
   let htmlTable = '<table>';
-
   for (let row = 0; row < 3; row++) {
     htmlTable += '<tr>';
     for (let col = 0; col < 3; col++) {
@@ -30,14 +30,30 @@ function render() {
         content = createCircleSVG();
       }
 
-      htmlTable += `<td>${content}</td>`;
+      const onclickAttr = fields[index] === "" ? `onclick="handleClick(${index})"` : "";
+      htmlTable += `<td id="field-${index}" ${onclickAttr}>${content}</td>`;
     }
     htmlTable += '</tr>';
   }
   htmlTable += '</table>';
-
-  // Tabelle in den Container einfügen
   document.getElementById('content').innerHTML = htmlTable;
+}
+
+function handleClick(index) {
+  fields[index] = currentPlayer;
+
+  // Nur dieses Feld aktualisieren
+  const clickedTd = document.getElementById("field-" + index);
+  if (currentPlayer === "X") {
+    clickedTd.innerHTML = createCrossSVG();
+  } else {
+    clickedTd.innerHTML = createCircleSVG();
+  }
+
+  clickedTd.removeAttribute("onclick");
+
+  // Spieler wechseln
+  currentPlayer = currentPlayer === "X" ? "O" : "X";
 }
 
 // Funktion, um ein SVG für den Kreis zu erstellen
