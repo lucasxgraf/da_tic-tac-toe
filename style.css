@@ -19,6 +19,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 /* Tabelle */
@@ -32,6 +33,11 @@ td {
   font-size: 36px;
   font-weight: bold;
   cursor: pointer;
+  box-sizing: border-box;
+}
+
+td svg {
+  display: block;
 }
 
 td:hover {
