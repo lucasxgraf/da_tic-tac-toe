@@ -10,13 +10,12 @@ let fields = [
   "",
 ];
 
-let currentPlayer = "X"; // Startet mit X
+let currentPlayer = "X";
 
-// Alle möglichen Gewinnkombinationen
 const winningCombinations = [
-  [0, 1, 2], [3, 4, 5], [6, 7, 8], // horizontal
-  [0, 3, 6], [1, 4, 7], [2, 5, 8], // vertikal
-  [0, 4, 8], [2, 4, 6]             // diagonal
+  [0, 1, 2], [3, 4, 5], [6, 7, 8],
+  [0, 3, 6], [1, 4, 7], [2, 5, 8],
+  [0, 4, 8], [2, 4, 6],
 ];
 
 function init() {
@@ -65,7 +64,6 @@ function restartGame() {
 function handleClick(index) {
   fields[index] = currentPlayer;
 
-  // Nur dieses Feld aktualisieren
   const clickedTd = document.getElementById("field-" + index);
   if (currentPlayer === "X") {
     clickedTd.innerHTML = createCrossSVG();
@@ -75,29 +73,25 @@ function handleClick(index) {
 
   clickedTd.removeAttribute("onclick");
 
-  // Prüfen ob das Spiel vorbei ist
   const winningCombo = checkGameOver();
   if (winningCombo) {
     drawWinningLine(winningCombo);
     disableAllClicks();
   } else {
-    // Spieler wechseln
     currentPlayer = currentPlayer === "X" ? "O" : "X";
   }
 }
 
-// Funktion zum Testen ob das Spiel vorbei ist
 function checkGameOver() {
   for (let combo of winningCombinations) {
     const [a, b, c] = combo;
     if (fields[a] && fields[a] === fields[b] && fields[a] === fields[c]) {
-      return combo; // Gibt die Gewinnkombination zurück
+      return combo;
     }
   }
-  return null; // Kein Gewinner
+  return null;
 }
 
-// Funktion zum Zeichnen der Gewinnlinie
 function drawWinningLine(combination) {
   const lineColor = '#ffffff';
   const lineWidth = 5;
@@ -127,7 +121,6 @@ function drawWinningLine(combination) {
   document.getElementById('content').appendChild(line);
 }
 
-// Funktion zum Deaktivieren aller Klicks nach Spielende
 function disableAllClicks() {
   for (let i = 0; i < 9; i++) {
     const field = document.getElementById(`field-${i}`);
@@ -137,7 +130,6 @@ function disableAllClicks() {
   }
 }
 
-// Funktion, um ein SVG für den Kreis zu erstellen
 function createCircleSVG() {
   return `
     <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
@@ -148,7 +140,6 @@ function createCircleSVG() {
   `;
 }
 
-// Funktion, um ein SVG für das Kreuz zu erstellen
 function createCrossSVG() {
   return `
     <svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">

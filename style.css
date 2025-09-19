@@ -1,4 +1,3 @@
-/* Gesamte Seite */
 body {
   margin: 0;
   padding: 0;
@@ -7,7 +6,6 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-/* Überschrift */
 h1 {
   margin: 32px 0;
   text-align: center;
@@ -19,10 +17,9 @@ h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: calc(100vh - 200px); /* Höhe Bildschirm minus Platz für Überschrift */
+  min-height: calc(100vh - 200px);
 }
 
-/* Content */
 #content {
   display: flex;
   justify-content: center;
@@ -30,9 +27,8 @@ h1 {
   position: relative;
 }
 
-/* Tabelle */
 table {
-  border-collapse: collapse; /* Trennlinien nur innerhalb der Tabelle */
+  border-collapse: collapse;
 }
 
 td {
@@ -53,7 +49,7 @@ td:hover {
 }
 
 table td {
-  border: 8px solid white; /* Weiße Trennlinien */
+  border: 8px solid white;
 }
 
 table tr:first-child td {
@@ -69,7 +65,6 @@ table tr td:last-child {
   border-right: 0;
 }
 
-/* Center Container */
 .center {
   display: flex;
   justify-content: center;
@@ -80,7 +75,6 @@ table tr td:last-child {
   margin-top: 56px;
 }
 
-/* Modern Button Styling */
 button {
   background: linear-gradient(135deg, #00B0EF, #0088CC);
   color: white;
